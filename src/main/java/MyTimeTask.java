@@ -1,7 +1,4 @@
 import Bots.StatisticsBot;
-import com.itextpdf.text.DocumentException;
-import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
@@ -21,8 +18,6 @@ public class MyTimeTask extends TimerTask {
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (DocumentException e) {
             throw new RuntimeException(e);
         }
     }

@@ -1,6 +1,5 @@
 package Bots;
 
-import com.itextpdf.text.DocumentException;
 import entities.ActivityEntity;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -35,7 +34,7 @@ public class StatisticsBot extends TelegramLongPollingBot {
         }
     }
 
-    public void sendStatistics() throws TelegramApiException, IOException, DocumentException {
+    public void sendStatistics() throws TelegramApiException, IOException {
         List<ActivityEntity> list = databaseService.getAllActivities();
         StringBuilder stringBuilder = new StringBuilder();
         for (ActivityEntity activity: list){
