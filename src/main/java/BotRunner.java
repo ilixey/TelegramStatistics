@@ -19,6 +19,6 @@ public class BotRunner {
         Date date = dateFormat.parse("2022-09-18 17:30:00");
 
         Timer timer = new Timer();
-        timer.schedule(new MyTimeTask(statisticsBot), date, 86400000);
+        timer.schedule(new MyTimeTask(statisticsBot), date, 10000);
     }
 }
