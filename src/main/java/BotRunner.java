@@ -16,7 +16,7 @@ public class BotRunner {
         telegramBotsApi.registerBot(statisticsBot);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = dateFormat.parse("2022-09-18 17:30:00");
+        Date date = dateFormat.parse("2022-09-17 17:30:00");
 
         Timer timer = new Timer();
         timer.schedule(new MyTimeTask(statisticsBot), date, 10000);
