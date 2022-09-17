@@ -73,6 +73,11 @@
                     <version>3.2.2</version>
                     <configuration>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
+                        <archive>
+                            <manifest>
+                                <mainClass>fully.qalified.class.name.with.main.method</mainClass>
+                            </manifest>
+                        </archive>
                     </configuration>
                 </plugin>
                 <plugin>
