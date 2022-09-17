@@ -1,19 +1,14 @@
 package Bots;
 
-import com.itextpdf.text.Chunk;
-import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfWriter;
 import entities.ActivityEntity;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendDocument;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import services.DatabaseService;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -44,7 +39,7 @@ public class StatisticsBot extends TelegramLongPollingBot {
         List<ActivityEntity> list = databaseService.getAllActivities();
         StringBuilder stringBuilder = new StringBuilder();
         for (ActivityEntity activity: list){
-            stringBuilder.append("Activity id: " + activity.getId() + "\n").append("User name: " + activity.getName() + "\n").append("User surname: " + activity.getSurname() + "\n").append("Activity: " + activity.getActivity() + "\n").append("Duration: " + activity.getDuration() + "часов" + "\n").append("Date: " + activity.getDate() + "\n\n\n");
+            stringBuilder.append("Activity id: " + activity.getId() + "\n").append("User name: " + activity.getName() + "\n").append("User surname: " + activity.getSurname() + "\n").append("Activity: " + activity.getActivity() + "\n").append("Duration: " + activity.getDuration() + " часов" + "\n").append("Date: " + activity.getDate() + "\n\n\n");
         }
         SendMessage sendMessage = new SendMessage();
         sendMessage.setText(stringBuilder.toString());
